@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, VStack, HStack, Heading, Text, Image, Divider, Link, Container } from "@chakra-ui/react";
+import { Box, VStack, HStack, Heading, Text, Image, Divider, Link, Container, Button } from "@chakra-ui/react";
 import { FaImdb, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Index = () => {
@@ -25,6 +25,14 @@ const Index = () => {
               <FaInstagram size={24} />
             </Link>
           </HStack>
+          <Button
+            onClick={() => {
+              localStorage.removeItem("auth_token");
+              window.location.href = "/login";
+            }}
+          >
+            Logout
+          </Button>
           <Divider />
           <Box textAlign="center">
             <Heading as="h2" size="xl" mb={4}>
